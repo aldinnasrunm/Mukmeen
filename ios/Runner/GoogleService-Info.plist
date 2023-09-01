@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>885455555650-9fg2ms1l8vc5r4qcco60gh8kp8grrtpv.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.885455555650-9fg2ms1l8vc5r4qcco60gh8kp8grrtpv</string>
+	<key>ANDROID_CLIENT_ID</key>
+	<string>885455555650-54a7det5eek7s4laetu77f59fk0phle5.apps.googleusercontent.com</string>
+	<key>API_KEY</key>
+	<string>AIzaSyAcewFOVQYKCrXG0LkiZDvEQIjwyyLcsFc</string>
+	<key>GCM_SENDER_ID</key>
+	<string>885455555650</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.mycompany.mukmeen</string>
+	<key>PROJECT_ID</key>
+	<string>mukmeen-db</string>
+	<key>STORAGE_BUCKET</key>
+	<string>mukmeen-db.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:885455555650:ios:94c0a3a5184707dbfa31db</string>
+</dict>
+</plist>

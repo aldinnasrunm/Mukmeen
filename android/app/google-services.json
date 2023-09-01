@@ -1,0 +1,106 @@
+{
+  "project_info": {
+    "project_number": "885455555650",
+    "project_id": "mukmeen-db",
+    "storage_bucket": "mukmeen-db.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:885455555650:android:ebd71b9a9e2fd426fa31db",
+        "android_client_info": {
+          "package_name": "com.mycompany.mukmeen"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "885455555650-ba7ekmvdqcebtlacvhbgg1ffbdkt2bv3.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.mycompany.mukmeen",
+            "certificate_hash": "9bbb3186b2189ef16d8f272bdab59362c395cbb4"
+          }
+        },
+        {
+          "client_id": "885455555650-bom0053celcr94fvt34fiq71saiuomdh.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.mycompany.mukmeen",
+            "certificate_hash": "bc0566bfc47ba8b03c52e5d9e092a2fdb16c9bcd"
+          }
+        },
+        {
+          "client_id": "885455555650-0lsscb40s61anjqbvm6c3h62f8gtcps0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDJK96CFQ06p3Mgs-8p_U5xg8-s_-4GPx4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "885455555650-0lsscb40s61anjqbvm6c3h62f8gtcps0.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "885455555650-9fg2ms1l8vc5r4qcco60gh8kp8grrtpv.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.mycompany.mukmeen"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:885455555650:android:5bb8ed1f8cd4cfb7fa31db",
+        "android_client_info": {
+          "package_name": "com.mycompany.passm"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "885455555650-54a7det5eek7s4laetu77f59fk0phle5.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.mycompany.passm",
+            "certificate_hash": "9bbb3186b2189ef16d8f272bdab59362c395cbb4"
+          }
+        },
+        {
+          "client_id": "885455555650-0lsscb40s61anjqbvm6c3h62f8gtcps0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDJK96CFQ06p3Mgs-8p_U5xg8-s_-4GPx4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "885455555650-0lsscb40s61anjqbvm6c3h62f8gtcps0.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "885455555650-9fg2ms1l8vc5r4qcco60gh8kp8grrtpv.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.mycompany.mukmeen"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
