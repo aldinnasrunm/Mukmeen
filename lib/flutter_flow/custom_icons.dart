@@ -9,6 +9,7 @@ class FFIcons {
   static const String _mosqueFamily = 'Mosque';
   static const String _icomoonFamily = 'Icomoon';
   static const String _seFamily = 'Se';
+  static const String _mosqFamily = 'Mosq';
 
   // back
   static const IconData kframe3 = IconData(0xe900, fontFamily: _backFamily);
@@ -34,4 +35,7 @@ class FFIcons {
       IconData(0xe900, fontFamily: _seFamily);
   static const IconData kmingcuteNotificationFill =
       IconData(0xe901, fontFamily: _seFamily);
+
+  // mosq
+  static const IconData kvector = IconData(0xe902, fontFamily: _mosqFamily);
 }

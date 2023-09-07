@@ -1,8 +1,6 @@
 // Export pages
-export '/pages/video_prev/video_prev_widget.dart' show VideoPrevWidget;
 export '/pages/welcoming/welcoming_widget.dart' show WelcomingWidget;
 export '/pages/login/login_widget.dart' show LoginWidget;
-export '/pages/surah_view_1/surah_view1_widget.dart' show SurahView1Widget;
 export '/pages/event/event_widget.dart' show EventWidget;
 export '/pages/sign_up/sign_up_widget.dart' show SignUpWidget;
 export '/pages/ayat_view/ayat_view_widget.dart' show AyatViewWidget;
@@ -16,4 +14,3 @@ export '/pages/quiz_1/quiz1_widget.dart' show Quiz1Widget;
 export '/pages/dashboard/dashboard_widget.dart' show DashboardWidget;
 export '/pages/profile/profile_widget.dart' show ProfileWidget;
 export '/pages/email_verif/email_verif_widget.dart' show EmailVerifWidget;
-export '/pages/audio/audio_widget.dart' show AudioWidget;

@@ -87,11 +87,6 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               appStateNotifier.loggedIn ? DashboardWidget() : WelcomingWidget(),
         ),
         FFRoute(
-          name: 'video-prev',
-          path: '/videoPrev',
-          builder: (context, params) => VideoPrevWidget(),
-        ),
-        FFRoute(
           name: 'Welcoming',
           path: '/welcoming',
           builder: (context, params) => WelcomingWidget(),
@@ -100,11 +95,6 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           name: 'login',
           path: '/login',
           builder: (context, params) => LoginWidget(),
-        ),
-        FFRoute(
-          name: 'surahView-1',
-          path: '/surahView1',
-          builder: (context, params) => SurahView1Widget(),
         ),
         FFRoute(
           name: 'Event',
@@ -169,14 +159,8 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           name: 'email_verif',
           path: '/emailVerif',
           builder: (context, params) => EmailVerifWidget(),
-        ),
-        FFRoute(
-          name: 'audio',
-          path: '/audio',
-          builder: (context, params) => AudioWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
-      observers: [routeObserver],
     );
 
 extension NavParamExtensions on Map<String, String?> {

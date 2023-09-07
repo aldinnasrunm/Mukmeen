@@ -4,11 +4,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
-import 'ayat_list_model.dart';
-export 'ayat_list_model.dart';
+import 'ayat_list_j_b_i_model.dart';
+export 'ayat_list_j_b_i_model.dart';
 
-class AyatListWidget extends StatefulWidget {
-  const AyatListWidget({
+class AyatListJBIWidget extends StatefulWidget {
+  const AyatListJBIWidget({
     Key? key,
     required this.ayatListTerkait,
   }) : super(key: key);
@@ -16,11 +16,11 @@ class AyatListWidget extends StatefulWidget {
   final List<dynamic>? ayatListTerkait;
 
   @override
-  _AyatListWidgetState createState() => _AyatListWidgetState();
+  _AyatListJBIWidgetState createState() => _AyatListJBIWidgetState();
 }
 
-class _AyatListWidgetState extends State<AyatListWidget> {
-  late AyatListModel _model;
+class _AyatListJBIWidgetState extends State<AyatListJBIWidget> {
+  late AyatListJBIModel _model;
 
   @override
   void setState(VoidCallback callback) {
@@ -31,7 +31,7 @@ class _AyatListWidgetState extends State<AyatListWidget> {
   @override
   void initState() {
     super.initState();
-    _model = createModel(context, () => AyatListModel());
+    _model = createModel(context, () => AyatListJBIModel());
   }
 
   @override
@@ -111,43 +111,67 @@ class _AyatListWidgetState extends State<AyatListWidget> {
                                 ),
                               ),
                             ),
-                            Flexible(
-                              child: Align(
-                                alignment: AlignmentDirectional(1.0, 0.0),
-                                child: Text(
-                                  getJsonField(
-                                    ayatItem,
-                                    r'''$.ar''',
-                                  ).toString(),
-                                  style: FlutterFlowTheme.of(context)
-                                      .bodyMedium
-                                      .override(
-                                        fontFamily: 'Amiri Quran',
-                                        fontSize: 22.0,
-                                      ),
+                            if (!FFAppState().isMurajaah)
+                              Flexible(
+                                child: Align(
+                                  alignment: AlignmentDirectional(1.0, 0.0),
+                                  child: Text(
+                                    getJsonField(
+                                      ayatItem,
+                                      r'''$.ar''',
+                                    ).toString(),
+                                    style: FlutterFlowTheme.of(context)
+                                        .bodyMedium
+                                        .override(
+                                          fontFamily: 'Amiri Quran',
+                                          fontSize: 22.0,
+                                        ),
+                                  ),
                                 ),
                               ),
-                            ),
                           ],
                         ),
-                        Align(
-                          alignment: AlignmentDirectional(-1.0, 0.0),
-                          child: Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
-                                0.0, 24.0, 0.0, 22.0),
-                            child: Text(
-                              getJsonField(
-                                ayatItem,
-                                r'''$.idn''',
-                              ).toString(),
-                              style: FlutterFlowTheme.of(context)
-                                  .bodyMedium
-                                  .override(
-                                    fontFamily: 'Plus Jakarta Sans',
-                                  ),
+                        if (FFAppState().isJBI && FFAppState().isMurajaah)
+                          Align(
+                            alignment: AlignmentDirectional(-1.0, 0.0),
+                            child: Padding(
+                              padding: EdgeInsetsDirectional.fromSTEB(
+                                  0.0, 24.0, 0.0, 0.0),
+                              child: Text(
+                                getJsonField(
+                                  ayatItem,
+                                  r'''$.signCode''',
+                                ).toString(),
+                                style: FlutterFlowTheme.of(context)
+                                    .bodyMedium
+                                    .override(
+                                      fontFamily: 'KodTanganQuran',
+                                      fontSize: 42.0,
+                                      fontWeight: FontWeight.normal,
+                                      useGoogleFonts: false,
+                                    ),
+                              ),
                             ),
                           ),
-                        ),
+                        if (!FFAppState().isMurajaah)
+                          Align(
+                            alignment: AlignmentDirectional(-1.0, 0.0),
+                            child: Padding(
+                              padding: EdgeInsetsDirectional.fromSTEB(
+                                  0.0, 12.0, 0.0, 22.0),
+                              child: Text(
+                                getJsonField(
+                                  ayatItem,
+                                  r'''$.idn''',
+                                ).toString(),
+                                style: FlutterFlowTheme.of(context)
+                                    .bodyMedium
+                                    .override(
+                                      fontFamily: 'Plus Jakarta Sans',
+                                    ),
+                              ),
+                            ),
+                          ),
                       ],
                     ),
                   ),

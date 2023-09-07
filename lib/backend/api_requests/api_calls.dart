@@ -126,6 +126,131 @@ class JuzukLengkapCall {
   }
 }
 
+class SurahJBICall {
+  static Future<ApiCallResponse> call({
+    int? noSurah,
+  }) {
+    return ApiManager.instance.makeApiCall(
+      callName: 'surahJBI',
+      apiUrl: 'aldinnasrunm.github.io/MukmeenAPI/surah/${noSurah}.json',
+      callType: ApiCallType.GET,
+      headers: {},
+      params: {
+        'no_surah': noSurah,
+      },
+      returnBody: true,
+      encodeBodyUtf8: false,
+      decodeUtf8: false,
+      cache: false,
+    );
+  }
+}
+
+class CariKotaCall {
+  static Future<ApiCallResponse> call({
+    String? namaKota = '',
+  }) {
+    return ApiManager.instance.makeApiCall(
+      callName: 'cari kota',
+      apiUrl: 'https://api.myquran.com/v1/sholat/kota/cari/${namaKota}',
+      callType: ApiCallType.GET,
+      headers: {},
+      params: {
+        'nama_kota': namaKota,
+      },
+      returnBody: true,
+      encodeBodyUtf8: false,
+      decodeUtf8: false,
+      cache: false,
+    );
+  }
+}
+
+class SemuaKotaCall {
+  static Future<ApiCallResponse> call() {
+    return ApiManager.instance.makeApiCall(
+      callName: 'semuaKota',
+      apiUrl: 'https://api.myquran.com/v1/sholat/kota/semua',
+      callType: ApiCallType.GET,
+      headers: {},
+      params: {},
+      returnBody: true,
+      encodeBodyUtf8: false,
+      decodeUtf8: false,
+      cache: false,
+    );
+  }
+}
+
+class GeoNameCall {
+  static Future<ApiCallResponse> call({
+    double? lat,
+    double? long,
+  }) {
+    return ApiManager.instance.makeApiCall(
+      callName: 'geoName',
+      apiUrl: 'https://geocode.maps.co/reverse?lat=${lat}&lon=${long}',
+      callType: ApiCallType.GET,
+      headers: {},
+      params: {
+        'lat': lat,
+        'long': long,
+      },
+      returnBody: true,
+      encodeBodyUtf8: false,
+      decodeUtf8: false,
+      cache: false,
+    );
+  }
+}
+
+class JadwalSholatCall {
+  static Future<ApiCallResponse> call({
+    String? idKota = '',
+    int? tahun,
+    int? bulan,
+    int? tanggal,
+  }) {
+    return ApiManager.instance.makeApiCall(
+      callName: 'jadwalSholat',
+      apiUrl:
+          'https://api.myquran.com/v1/sholat/jadwal/${idKota}/${tahun}/${bulan}/${tanggal}',
+      callType: ApiCallType.GET,
+      headers: {},
+      params: {
+        'idKota': idKota,
+        'tahun': tahun,
+        'bulan': bulan,
+        'tanggal': tanggal,
+      },
+      returnBody: true,
+      encodeBodyUtf8: false,
+      decodeUtf8: false,
+      cache: false,
+    );
+  }
+}
+
+class IdKotaCall {
+  static Future<ApiCallResponse> call({
+    String? namakota = '',
+  }) {
+    return ApiManager.instance.makeApiCall(
+      callName: 'idKota',
+      apiUrl: 'https://api.myquran.com/v1/sholat/kota/cari/${namakota}',
+      callType: ApiCallType.GET,
+      headers: {},
+      params: {
+        'namakota': namakota,
+      },
+      returnBody: true,
+      encodeBodyUtf8: false,
+      decodeUtf8: false,
+      cache: false,
+    );
+  }
+}
+
 class ApiPagingParams {
   int nextPageNumber = 0;
   int numItems = 0;

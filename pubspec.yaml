@@ -25,14 +25,13 @@ dependencies:
     sdk: flutter
   flutter_localizations:
     sdk: flutter
-  assets_audio_player: 3.0.6
-  assets_audio_player_web: 3.0.6
   audio_session: 0.1.10
   auto_size_text: 3.0.0
   cached_network_image: 3.2.1
   cloud_firestore: 4.8.0
   cloud_firestore_platform_interface: 5.15.0
   cloud_firestore_web: 3.6.0
+  dropdown_button2: 2.0.0
   equatable: 2.0.5
   firebase_auth: 4.6.2
   firebase_auth_platform_interface: 6.15.2
@@ -88,11 +87,6 @@ dependencies:
   url_launcher_android: 6.0.27
   url_launcher_ios: 6.1.4
   url_launcher_platform_interface: 2.1.2
-  webview_flutter: 4.0.5
-  webview_flutter_android: 3.3.1
-  webview_flutter_platform_interface: 2.0.2
-  webview_flutter_wkwebview: 3.1.1
-  youtube_player_iframe: 4.0.4
 
 
   # The following adds the Cupertino Icons font to your application.
@@ -134,8 +128,12 @@ flutter:
     - assets/rive_animations/
     - assets/pdfs/
 
-
   fonts:
+    - family: 'KodTanganQuran'
+      fonts:
+        - asset: assets/fonts/KodTanganQuran.ttf
+
+
     - family: Back
       fonts:
         - asset: assets/fonts/back.ttf
@@ -154,6 +152,9 @@ flutter:
     - family: Se
       fonts:
         - asset: assets/fonts/se.ttf
+    - family: Mosq
+      fonts:
+        - asset: assets/fonts/mosq.ttf
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

@@ -1,8 +1,11 @@
 import '/backend/api_requests/api_calls.dart';
-import '/components/ayat_list_widget.dart';
+import '/components/ayat_list_j_b_i_widget.dart';
+import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -36,6 +39,11 @@ class _AyatViewWidgetState extends State<AyatViewWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => AyatViewModel());
+
+    // On page load action.
+    SchedulerBinding.instance.addPostFrameCallback((_) async {
+      setDarkModeSetting(context, ThemeMode.light);
+    });
   }
 
   @override
@@ -50,8 +58,8 @@ class _AyatViewWidgetState extends State<AyatViewWidget> {
     context.watch<FFAppState>();
 
     return FutureBuilder<ApiCallResponse>(
-      future: AyatAPICall.call(
-        nomorSurah: widget.nomorSurah,
+      future: SurahJBICall.call(
+        noSurah: widget.nomorSurah,
       ),
       builder: (context, snapshot) {
         // Customize what your widget looks like when it's loading.
@@ -71,7 +79,7 @@ class _AyatViewWidgetState extends State<AyatViewWidget> {
             ),
           );
         }
-        final ayatViewAyatAPIResponse = snapshot.data!;
+        final ayatViewSurahJBIResponse = snapshot.data!;
         return GestureDetector(
           onTap: () => FocusScope.of(context).requestFocus(_model.unfocusNode),
           child: Scaffold(
@@ -163,7 +171,7 @@ class _AyatViewWidgetState extends State<AyatViewWidget> {
                                   ),
                                   child: Padding(
                                     padding: EdgeInsetsDirectional.fromSTEB(
-                                        0.0, 32.0, 0.0, 16.0),
+                                        0.0, 24.0, 0.0, 0.0),
                                     child: Column(
                                       mainAxisSize: MainAxisSize.max,
                                       mainAxisAlignment:
@@ -189,6 +197,8 @@ class _AyatViewWidgetState extends State<AyatViewWidget> {
                                                         .override(
                                                           fontFamily:
                                                               'Plus Jakarta Sans',
+                                                          color:
+                                                              Color(0xFF223421),
                                                           fontWeight:
                                                               FontWeight.w600,
                                                         ),
@@ -206,6 +216,8 @@ class _AyatViewWidgetState extends State<AyatViewWidget> {
                                                           .override(
                                                             fontFamily:
                                                                 'Plus Jakarta Sans',
+                                                            color: Color(
+                                                                0xFF223421),
                                                             fontSize: 14.0,
                                                             fontWeight:
                                                                 FontWeight.w500,
@@ -222,9 +234,7 @@ class _AyatViewWidgetState extends State<AyatViewWidget> {
                                                       child: Icon(
                                                         FFIcons.kmapMosque,
                                                         color:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .primaryText,
+                                                            Color(0xFF223421),
                                                         size: 14.0,
                                                       ),
                                                     ),
@@ -237,7 +247,7 @@ class _AyatViewWidgetState extends State<AyatViewWidget> {
                                         Padding(
                                           padding:
                                               EdgeInsetsDirectional.fromSTEB(
-                                                  29.0, 32.0, 29.0, 32.0),
+                                                  29.0, 24.0, 29.0, 24.0),
                                           child: Row(
                                             mainAxisSize: MainAxisSize.max,
                                             mainAxisAlignment:
@@ -258,6 +268,8 @@ class _AyatViewWidgetState extends State<AyatViewWidget> {
                                                         .override(
                                                           fontFamily:
                                                               'Plus Jakarta Sans',
+                                                          color:
+                                                              Color(0xFF223421),
                                                           fontWeight:
                                                               FontWeight.w600,
                                                         ),
@@ -270,6 +282,8 @@ class _AyatViewWidgetState extends State<AyatViewWidget> {
                                                         .override(
                                                           fontFamily:
                                                               'Plus Jakarta Sans',
+                                                          color:
+                                                              Color(0xFF223421),
                                                         ),
                                                   ),
                                                 ],
@@ -333,7 +347,7 @@ class _AyatViewWidgetState extends State<AyatViewWidget> {
                                                             _model.soundPlayer!
                                                                 .setUrl(
                                                                     getJsonField(
-                                                                  ayatViewAyatAPIResponse
+                                                                  ayatViewSurahJBIResponse
                                                                       .jsonBody,
                                                                   r'''$.audio''',
                                                                 ))
@@ -371,6 +385,8 @@ class _AyatViewWidgetState extends State<AyatViewWidget> {
                                                           .override(
                                                             fontFamily:
                                                                 'Plus Jakarta Sans',
+                                                            color: Color(
+                                                                0xFF223421),
                                                             fontWeight:
                                                                 FontWeight.w500,
                                                           ),
@@ -395,15 +411,19 @@ class _AyatViewWidgetState extends State<AyatViewWidget> {
                                             .primaryBackground,
                                       ),
                                     ),
-                                    child: wrapWithModel(
-                                      model: _model.ayatListModel,
-                                      updateCallback: () => setState(() {}),
-                                      child: AyatListWidget(
-                                        ayatListTerkait: getJsonField(
-                                          ayatViewAyatAPIResponse.jsonBody,
-                                          r'''$.ayat''',
-                                        )!,
-                                      ),
+                                    child: Stack(
+                                      children: [
+                                        wrapWithModel(
+                                          model: _model.ayatListJBIModel,
+                                          updateCallback: () => setState(() {}),
+                                          child: AyatListJBIWidget(
+                                            ayatListTerkait: getJsonField(
+                                              ayatViewSurahJBIResponse.jsonBody,
+                                              r'''$.ayat''',
+                                            )!,
+                                          ),
+                                        ),
+                                      ],
                                     ),
                                   ),
                                 ),
@@ -413,6 +433,203 @@ class _AyatViewWidgetState extends State<AyatViewWidget> {
                                       MediaQuery.sizeOf(context).height * 0.1,
                                   decoration: BoxDecoration(
                                     color: Color(0xFF223421),
+                                    border: Border.all(
+                                      color: FlutterFlowTheme.of(context)
+                                          .primaryText,
+                                    ),
+                                  ),
+                                  alignment: AlignmentDirectional(0.0, 0.0),
+                                  child: Column(
+                                    mainAxisSize: MainAxisSize.max,
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children: [
+                                      Row(
+                                        mainAxisSize: MainAxisSize.max,
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.spaceEvenly,
+                                        children: [
+                                          Expanded(
+                                            child: Align(
+                                              alignment: AlignmentDirectional(
+                                                  0.0, 0.0),
+                                              child: Padding(
+                                                padding: EdgeInsetsDirectional
+                                                    .fromSTEB(
+                                                        24.0, 0.0, 0.0, 0.0),
+                                                child: Stack(
+                                                  children: [
+                                                    if (FFAppState().isJBI)
+                                                      FFButtonWidget(
+                                                        onPressed: () async {
+                                                          setState(() {
+                                                            FFAppState().isJBI =
+                                                                false;
+                                                          });
+                                                        },
+                                                        text:
+                                                            'Qur\'an Reguler\n',
+                                                        options:
+                                                            FFButtonOptions(
+                                                          height: 40.0,
+                                                          padding:
+                                                              EdgeInsetsDirectional
+                                                                  .fromSTEB(
+                                                                      24.0,
+                                                                      12.0,
+                                                                      24.0,
+                                                                      12.0),
+                                                          iconPadding:
+                                                              EdgeInsetsDirectional
+                                                                  .fromSTEB(
+                                                                      0.0,
+                                                                      0.0,
+                                                                      0.0,
+                                                                      0.0),
+                                                          color:
+                                                              Color(0x32FFFFFF),
+                                                          textStyle:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .titleSmall
+                                                                  .override(
+                                                                    fontFamily:
+                                                                        'Plus Jakarta Sans',
+                                                                    color: Colors
+                                                                        .white,
+                                                                    fontWeight:
+                                                                        FontWeight
+                                                                            .bold,
+                                                                  ),
+                                                          elevation: 0.0,
+                                                          borderSide:
+                                                              BorderSide(
+                                                            color: Colors.white,
+                                                            width: 1.0,
+                                                          ),
+                                                          borderRadius:
+                                                              BorderRadius
+                                                                  .circular(
+                                                                      8.0),
+                                                        ),
+                                                      ),
+                                                    if (!FFAppState().isJBI)
+                                                      FFButtonWidget(
+                                                        onPressed: () async {
+                                                          setState(() {
+                                                            FFAppState().isJBI =
+                                                                true;
+                                                          });
+                                                        },
+                                                        text: 'Qur\'an Isyarat',
+                                                        options:
+                                                            FFButtonOptions(
+                                                          height: 40.0,
+                                                          padding:
+                                                              EdgeInsetsDirectional
+                                                                  .fromSTEB(
+                                                                      24.0,
+                                                                      12.0,
+                                                                      24.0,
+                                                                      12.0),
+                                                          iconPadding:
+                                                              EdgeInsetsDirectional
+                                                                  .fromSTEB(
+                                                                      0.0,
+                                                                      0.0,
+                                                                      0.0,
+                                                                      0.0),
+                                                          color:
+                                                              Color(0x32FFFFFF),
+                                                          textStyle:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .titleSmall
+                                                                  .override(
+                                                                    fontFamily:
+                                                                        'Plus Jakarta Sans',
+                                                                    color: Colors
+                                                                        .white,
+                                                                    fontWeight:
+                                                                        FontWeight
+                                                                            .bold,
+                                                                  ),
+                                                          elevation: 0.0,
+                                                          borderSide:
+                                                              BorderSide(
+                                                            color: Colors.white,
+                                                            width: 1.0,
+                                                          ),
+                                                          borderRadius:
+                                                              BorderRadius
+                                                                  .circular(
+                                                                      8.0),
+                                                        ),
+                                                      ),
+                                                  ],
+                                                ),
+                                              ),
+                                            ),
+                                          ),
+                                          Align(
+                                            alignment:
+                                                AlignmentDirectional(0.0, 0.0),
+                                            child: Padding(
+                                              padding: EdgeInsetsDirectional
+                                                  .fromSTEB(
+                                                      0.0, 0.0, 24.0, 0.0),
+                                              child: Stack(
+                                                children: [
+                                                  if (FFAppState().isMurajaah)
+                                                    FlutterFlowIconButton(
+                                                      borderColor: Colors.white,
+                                                      borderRadius: 24.0,
+                                                      borderWidth: 1.0,
+                                                      buttonSize: 52.0,
+                                                      fillColor:
+                                                          Color(0x32FFFFFF),
+                                                      icon: FaIcon(
+                                                        FontAwesomeIcons.eye,
+                                                        color:
+                                                            Color(0xFFFEFEFE),
+                                                        size: 32.0,
+                                                      ),
+                                                      onPressed: () async {
+                                                        setState(() {
+                                                          FFAppState()
+                                                                  .isMurajaah =
+                                                              false;
+                                                        });
+                                                      },
+                                                    ),
+                                                  if (!FFAppState().isMurajaah)
+                                                    FlutterFlowIconButton(
+                                                      borderColor: Colors.white,
+                                                      borderRadius: 24.0,
+                                                      borderWidth: 1.0,
+                                                      buttonSize: 52.0,
+                                                      fillColor:
+                                                          Color(0x32FFFFFF),
+                                                      icon: FaIcon(
+                                                        FontAwesomeIcons.eye,
+                                                        color:
+                                                            Color(0xFFFEFEFE),
+                                                        size: 32.0,
+                                                      ),
+                                                      onPressed: () async {
+                                                        setState(() {
+                                                          FFAppState()
+                                                                  .isMurajaah =
+                                                              true;
+                                                        });
+                                                      },
+                                                    ),
+                                                ],
+                                              ),
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                    ],
                                   ),
                                 ),
                               ],

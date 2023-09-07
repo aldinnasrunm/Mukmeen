@@ -25,6 +25,36 @@ class FFAppState extends ChangeNotifier {
   set isAudioPlayed(bool _value) {
     _isAudioPlayed = _value;
   }
+
+  int _idKotaLokasi = 0;
+  int get idKotaLokasi => _idKotaLokasi;
+  set idKotaLokasi(int _value) {
+    _idKotaLokasi = _value;
+  }
+
+  String _kota = '';
+  String get kota => _kota;
+  set kota(String _value) {
+    _kota = _value;
+  }
+
+  String _idLokasi = '';
+  String get idLokasi => _idLokasi;
+  set idLokasi(String _value) {
+    _idLokasi = _value;
+  }
+
+  bool _isJBI = false;
+  bool get isJBI => _isJBI;
+  set isJBI(bool _value) {
+    _isJBI = _value;
+  }
+
+  bool _isMurajaah = false;
+  bool get isMurajaah => _isMurajaah;
+  set isMurajaah(bool _value) {
+    _isMurajaah = _value;
+  }
 }
 
 LatLng? _latLngFromString(String? val) {
