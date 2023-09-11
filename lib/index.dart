@@ -14,3 +14,7 @@ export '/pages/quiz_1/quiz1_widget.dart' show Quiz1Widget;
 export '/pages/dashboard/dashboard_widget.dart' show DashboardWidget;
 export '/pages/profile/profile_widget.dart' show ProfileWidget;
 export '/pages/email_verif/email_verif_widget.dart' show EmailVerifWidget;
+export '/pages/doa_page/doa_page_widget.dart' show DoaPageWidget;
+export '/pages/doa_view/doa_view_widget.dart' show DoaViewWidget;
+export '/pages/belajar/belajar_widget.dart' show BelajarWidget;
+export '/pages/notifikasi/notifikasi_widget.dart' show NotifikasiWidget;

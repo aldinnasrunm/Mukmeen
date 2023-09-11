@@ -12,18 +12,6 @@ import '/backend/backend.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import '/auth/firebase_auth/auth_util.dart';
 
-double getLat(LatLng latlng) {
-  double lat = latlng.latitude;
-
-  return lat;
-}
-
-double getLong(LatLng latlng) {
-  double long = latlng.longitude;
-
-  return long;
-}
-
 int getYear(DateTime dateTime) {
   return dateTime.year;
 }

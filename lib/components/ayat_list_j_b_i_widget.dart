@@ -66,7 +66,7 @@ class _AyatListJBIWidgetState extends State<AyatListJBIWidget> {
                     color: Colors.white,
                   ),
                   child: Align(
-                    alignment: AlignmentDirectional(0.0, 0.0),
+                    alignment: AlignmentDirectional(0.00, 0.00),
                     child: Column(
                       mainAxisSize: MainAxisSize.max,
                       mainAxisAlignment: MainAxisAlignment.center,
@@ -83,7 +83,8 @@ class _AyatListJBIWidgetState extends State<AyatListJBIWidget> {
                                 child: Stack(
                                   children: [
                                     Align(
-                                      alignment: AlignmentDirectional(0.0, 0.0),
+                                      alignment:
+                                          AlignmentDirectional(0.00, 0.00),
                                       child: Text(
                                         getJsonField(
                                           ayatItem,
@@ -114,7 +115,7 @@ class _AyatListJBIWidgetState extends State<AyatListJBIWidget> {
                             if (!FFAppState().isMurajaah)
                               Flexible(
                                 child: Align(
-                                  alignment: AlignmentDirectional(1.0, 0.0),
+                                  alignment: AlignmentDirectional(1.00, 0.00),
                                   child: Text(
                                     getJsonField(
                                       ayatItem,
@@ -131,9 +132,9 @@ class _AyatListJBIWidgetState extends State<AyatListJBIWidget> {
                               ),
                           ],
                         ),
-                        if (FFAppState().isJBI && FFAppState().isMurajaah)
+                        if (FFAppState().isJBI && !FFAppState().isMurajaah)
                           Align(
-                            alignment: AlignmentDirectional(-1.0, 0.0),
+                            alignment: AlignmentDirectional(-1.00, 0.00),
                             child: Padding(
                               padding: EdgeInsetsDirectional.fromSTEB(
                                   0.0, 24.0, 0.0, 0.0),
@@ -155,7 +156,7 @@ class _AyatListJBIWidgetState extends State<AyatListJBIWidget> {
                           ),
                         if (!FFAppState().isMurajaah)
                           Align(
-                            alignment: AlignmentDirectional(-1.0, 0.0),
+                            alignment: AlignmentDirectional(-1.00, 0.00),
                             child: Padding(
                               padding: EdgeInsetsDirectional.fromSTEB(
                                   0.0, 12.0, 0.0, 22.0),

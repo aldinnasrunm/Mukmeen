@@ -2,9 +2,11 @@ import '/auth/firebase_auth/auth_util.dart';
 import '/backend/api_requests/api_calls.dart';
 import '/backend/backend.dart';
 import '/components/jadwal_sholat_widget.dart';
+import '/components/list_doa_widget.dart';
 import '/flutter_flow/flutter_flow_drop_down.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
 import '/flutter_flow/custom_functions.dart' as functions;
 import 'package:cloud_firestore/cloud_firestore.dart';
@@ -118,29 +120,31 @@ class _DashboardWidgetState extends State<DashboardWidget> {
                             Row(
                               mainAxisSize: MainAxisSize.max,
                               children: [
-                                InkWell(
-                                  splashColor: Colors.transparent,
-                                  focusColor: Colors.transparent,
-                                  hoverColor: Colors.transparent,
-                                  highlightColor: Colors.transparent,
-                                  onTap: () async {
-                                    context.pushNamed('profile');
-                                  },
-                                  child: Container(
-                                    width: 42.0,
-                                    height: 42.0,
-                                    clipBehavior: Clip.antiAlias,
-                                    decoration: BoxDecoration(
-                                      shape: BoxShape.circle,
-                                    ),
-                                    child: Image.network(
-                                      currentUserPhoto,
-                                      fit: BoxFit.cover,
+                                AuthUserStreamWidget(
+                                  builder: (context) => InkWell(
+                                    splashColor: Colors.transparent,
+                                    focusColor: Colors.transparent,
+                                    hoverColor: Colors.transparent,
+                                    highlightColor: Colors.transparent,
+                                    onTap: () async {
+                                      context.pushNamed('profile');
+                                    },
+                                    child: Container(
+                                      width: 42.0,
+                                      height: 42.0,
+                                      clipBehavior: Clip.antiAlias,
+                                      decoration: BoxDecoration(
+                                        shape: BoxShape.circle,
+                                      ),
+                                      child: Image.network(
+                                        currentUserPhoto,
+                                        fit: BoxFit.cover,
+                                      ),
                                     ),
                                   ),
                                 ),
                                 Align(
-                                  alignment: AlignmentDirectional(-1.0, 0.0),
+                                  alignment: AlignmentDirectional(-1.00, 0.00),
                                   child: Padding(
                                     padding: EdgeInsetsDirectional.fromSTEB(
                                         12.0, 0.0, 0.0, 0.0),
@@ -161,16 +165,19 @@ class _DashboardWidgetState extends State<DashboardWidget> {
                                                 color: Colors.white,
                                               ),
                                         ),
-                                        Text(
-                                          currentUserDisplayName,
-                                          textAlign: TextAlign.start,
-                                          style: FlutterFlowTheme.of(context)
-                                              .bodyMedium
-                                              .override(
-                                                fontFamily: 'Plus Jakarta Sans',
-                                                color: Colors.white,
-                                                fontWeight: FontWeight.w500,
-                                              ),
+                                        AuthUserStreamWidget(
+                                          builder: (context) => Text(
+                                            currentUserDisplayName,
+                                            textAlign: TextAlign.start,
+                                            style: FlutterFlowTheme.of(context)
+                                                .bodyMedium
+                                                .override(
+                                                  fontFamily:
+                                                      'Plus Jakarta Sans',
+                                                  color: Colors.white,
+                                                  fontWeight: FontWeight.w500,
+                                                ),
+                                          ),
                                         ),
                                       ],
                                     ),
@@ -184,16 +191,34 @@ class _DashboardWidgetState extends State<DashboardWidget> {
                                 Padding(
                                   padding: EdgeInsetsDirectional.fromSTEB(
                                       0.0, 0.0, 12.0, 0.0),
+                                  child: InkWell(
+                                    splashColor: Colors.transparent,
+                                    focusColor: Colors.transparent,
+                                    hoverColor: Colors.transparent,
+                                    highlightColor: Colors.transparent,
+                                    onTap: () async {
+                                      context.pushNamed('notifikasi');
+                                    },
+                                    child: Icon(
+                                      FFIcons.kmingcuteNotificationFill,
+                                      color: Colors.white,
+                                      size: 27.0,
+                                    ),
+                                  ),
+                                ),
+                                InkWell(
+                                  splashColor: Colors.transparent,
+                                  focusColor: Colors.transparent,
+                                  hoverColor: Colors.transparent,
+                                  highlightColor: Colors.transparent,
+                                  onTap: () async {
+                                    context.pushNamed('profile');
+                                  },
                                   child: Icon(
-                                    FFIcons.kmingcuteNotificationFill,
+                                    FFIcons.kicRoundSettings,
                                     color: Colors.white,
                                     size: 27.0,
                                   ),
-                                ),
-                                Icon(
-                                  FFIcons.kicRoundSettings,
-                                  color: Colors.white,
-                                  size: 27.0,
                                 ),
                               ],
                             ),
@@ -230,7 +255,7 @@ class _DashboardWidgetState extends State<DashboardWidget> {
                                   children: [
                                     Align(
                                       alignment:
-                                          AlignmentDirectional(-1.0, 0.0),
+                                          AlignmentDirectional(-1.00, 0.00),
                                       child: Text(
                                         'Jadwal Sholat',
                                         style: FlutterFlowTheme.of(context)
@@ -246,7 +271,7 @@ class _DashboardWidgetState extends State<DashboardWidget> {
                                     Flexible(
                                       child: Align(
                                         alignment:
-                                            AlignmentDirectional(1.0, 0.0),
+                                            AlignmentDirectional(1.00, 0.00),
                                         child: Padding(
                                           padding:
                                               EdgeInsetsDirectional.fromSTEB(
@@ -296,26 +321,6 @@ class _DashboardWidgetState extends State<DashboardWidget> {
                                                 onChanged: (val) async {
                                                   setState(() => _model
                                                       .locPickerValue = val);
-                                                  await showDialog(
-                                                    context: context,
-                                                    builder:
-                                                        (alertDialogContext) {
-                                                      return AlertDialog(
-                                                        title: Text(
-                                                            'Selected city'),
-                                                        content: Text(_model
-                                                            .locPickerValue!),
-                                                        actions: [
-                                                          TextButton(
-                                                            onPressed: () =>
-                                                                Navigator.pop(
-                                                                    alertDialogContext),
-                                                            child: Text('Ok'),
-                                                          ),
-                                                        ],
-                                                      );
-                                                    },
-                                                  );
                                                   setState(() {
                                                     FFAppState().kota =
                                                         _model.locPickerValue!;
@@ -325,30 +330,6 @@ class _DashboardWidgetState extends State<DashboardWidget> {
                                                     namakota:
                                                         functions.extractCity(
                                                             FFAppState().kota),
-                                                  );
-                                                  await showDialog(
-                                                    context: context,
-                                                    builder:
-                                                        (alertDialogContext) {
-                                                      return AlertDialog(
-                                                        title: Text('ID Kota'),
-                                                        content:
-                                                            Text(getJsonField(
-                                                          (_model.idDariKota
-                                                                  ?.jsonBody ??
-                                                              ''),
-                                                          r'''$.data[0].lokasi''',
-                                                        ).toString()),
-                                                        actions: [
-                                                          TextButton(
-                                                            onPressed: () =>
-                                                                Navigator.pop(
-                                                                    alertDialogContext),
-                                                            child: Text('Ok'),
-                                                          ),
-                                                        ],
-                                                      );
-                                                    },
                                                   );
 
                                                   await dashboardUsersRecord!
@@ -505,90 +486,340 @@ class _DashboardWidgetState extends State<DashboardWidget> {
                         ],
                       ),
                       Expanded(
+                        child: Padding(
+                          padding: EdgeInsetsDirectional.fromSTEB(
+                              0.0, 32.0, 0.0, 0.0),
+                          child: Container(
+                            width: 100.0,
+                            height: 100.0,
+                            decoration: BoxDecoration(
+                              color: Color(0x00FFFFFF),
+                            ),
+                            child: FutureBuilder<ApiCallResponse>(
+                              future: DoaCall.call(),
+                              builder: (context, snapshot) {
+                                // Customize what your widget looks like when it's loading.
+                                if (!snapshot.hasData) {
+                                  return Center(
+                                    child: SizedBox(
+                                      width: 50.0,
+                                      height: 50.0,
+                                      child: CircularProgressIndicator(
+                                        valueColor:
+                                            AlwaysStoppedAnimation<Color>(
+                                          FlutterFlowTheme.of(context).primary,
+                                        ),
+                                      ),
+                                    ),
+                                  );
+                                }
+                                final columnDoaResponse = snapshot.data!;
+                                return Column(
+                                  mainAxisSize: MainAxisSize.max,
+                                  children: [
+                                    Row(
+                                      mainAxisSize: MainAxisSize.max,
+                                      children: [
+                                        Text(
+                                          'Do\'a Pilihan',
+                                          textAlign: TextAlign.start,
+                                          style: FlutterFlowTheme.of(context)
+                                              .headlineLarge
+                                              .override(
+                                                fontFamily: 'Plus Jakarta Sans',
+                                                color: Colors.white,
+                                                fontSize: 18.0,
+                                                fontWeight: FontWeight.bold,
+                                              ),
+                                        ),
+                                      ],
+                                    ),
+                                    Expanded(
+                                      child: Container(
+                                        width:
+                                            MediaQuery.sizeOf(context).width *
+                                                1.0,
+                                        height: 100.0,
+                                        decoration: BoxDecoration(
+                                          color: Colors.white,
+                                        ),
+                                        child: wrapWithModel(
+                                          model: _model.listDoaModel,
+                                          updateCallback: () => setState(() {}),
+                                          child: ListDoaWidget(
+                                            doaData: getJsonField(
+                                              columnDoaResponse.jsonBody,
+                                              r'''$[2:6]''',
+                                            )!,
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                  ],
+                                );
+                              },
+                            ),
+                          ),
+                        ),
+                      ),
+                      Expanded(
                         child: Align(
-                          alignment: AlignmentDirectional(0.0, 1.0),
+                          alignment: AlignmentDirectional(0.00, 1.00),
                           child: Padding(
                             padding: EdgeInsetsDirectional.fromSTEB(
                                 24.0, 0.0, 24.0, 24.0),
                             child: Container(
-                              width: MediaQuery.sizeOf(context).width * 0.8,
-                              height: 73.0,
+                              width: MediaQuery.sizeOf(context).width * 1.0,
+                              height: 80.0,
                               decoration: BoxDecoration(
                                 color: Color(0x9A232323),
                                 borderRadius: BorderRadius.circular(30.0),
                                 shape: BoxShape.rectangle,
                               ),
                               child: Align(
-                                alignment: AlignmentDirectional(0.0, 0.0),
-                                child: Row(
-                                  mainAxisSize: MainAxisSize.max,
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceAround,
-                                  crossAxisAlignment: CrossAxisAlignment.end,
-                                  children: [
-                                    InkWell(
-                                      splashColor: Colors.transparent,
-                                      focusColor: Colors.transparent,
-                                      hoverColor: Colors.transparent,
-                                      highlightColor: Colors.transparent,
-                                      onTap: () async {
-                                        context.pushNamed('surahView-rev');
-                                      },
-                                      child: Column(
-                                        mainAxisSize: MainAxisSize.max,
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.spaceAround,
-                                        children: [
-                                          Icon(
-                                            FFIcons.kquranIco,
-                                            color: Colors.white,
-                                            size: 32.0,
-                                          ),
-                                          Text(
-                                            'Quran',
-                                            style: FlutterFlowTheme.of(context)
-                                                .bodySmall
-                                                .override(
-                                                  fontFamily:
-                                                      'Plus Jakarta Sans',
-                                                  color: Colors.white,
+                                alignment: AlignmentDirectional(0.00, 0.00),
+                                child: Padding(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                      12.0, 0.0, 12.0, 0.0),
+                                  child: Row(
+                                    mainAxisSize: MainAxisSize.max,
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceAround,
+                                    crossAxisAlignment: CrossAxisAlignment.end,
+                                    children: [
+                                      Expanded(
+                                        child: InkWell(
+                                          splashColor: Colors.transparent,
+                                          focusColor: Colors.transparent,
+                                          hoverColor: Colors.transparent,
+                                          highlightColor: Colors.transparent,
+                                          onTap: () async {
+                                            context.pushNamed(
+                                              'surahView-rev',
+                                              extra: <String, dynamic>{
+                                                kTransitionInfoKey:
+                                                    TransitionInfo(
+                                                  hasTransition: true,
+                                                  transitionType:
+                                                      PageTransitionType
+                                                          .bottomToTop,
                                                 ),
+                                              },
+                                            );
+                                          },
+                                          child: Column(
+                                            mainAxisSize: MainAxisSize.max,
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.spaceAround,
+                                            children: [
+                                              Icon(
+                                                FFIcons.kquranIco,
+                                                color: Colors.white,
+                                                size: 32.0,
+                                              ),
+                                              Text(
+                                                'Quran',
+                                                style:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodySmall
+                                                        .override(
+                                                          fontFamily:
+                                                              'Plus Jakarta Sans',
+                                                          color: Colors.white,
+                                                        ),
+                                              ),
+                                            ],
                                           ),
-                                        ],
+                                        ),
                                       ),
-                                    ),
-                                    InkWell(
-                                      splashColor: Colors.transparent,
-                                      focusColor: Colors.transparent,
-                                      hoverColor: Colors.transparent,
-                                      highlightColor: Colors.transparent,
-                                      onTap: () async {
-                                        context.pushNamed('Event');
-                                      },
-                                      child: Column(
-                                        mainAxisSize: MainAxisSize.max,
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.spaceAround,
-                                        children: [
-                                          Icon(
-                                            FFIcons.kevenIco,
-                                            color: Colors.white,
-                                            size: 32.0,
-                                          ),
-                                          Text(
-                                            'Even',
-                                            style: FlutterFlowTheme.of(context)
-                                                .bodySmall
-                                                .override(
-                                                  fontFamily:
-                                                      'Plus Jakarta Sans',
-                                                  color: Colors.white,
+                                      Expanded(
+                                        child: InkWell(
+                                          splashColor: Colors.transparent,
+                                          focusColor: Colors.transparent,
+                                          hoverColor: Colors.transparent,
+                                          highlightColor: Colors.transparent,
+                                          onTap: () async {
+                                            context.pushNamed(
+                                              'Event',
+                                              extra: <String, dynamic>{
+                                                kTransitionInfoKey:
+                                                    TransitionInfo(
+                                                  hasTransition: true,
+                                                  transitionType:
+                                                      PageTransitionType
+                                                          .bottomToTop,
                                                 ),
+                                              },
+                                            );
+                                          },
+                                          child: Column(
+                                            mainAxisSize: MainAxisSize.max,
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.spaceAround,
+                                            children: [
+                                              Icon(
+                                                FFIcons.kevenIco,
+                                                color: Colors.white,
+                                                size: 32.0,
+                                              ),
+                                              Text(
+                                                'Even',
+                                                style:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodySmall
+                                                        .override(
+                                                          fontFamily:
+                                                              'Plus Jakarta Sans',
+                                                          color: Colors.white,
+                                                        ),
+                                              ),
+                                            ],
                                           ),
-                                        ],
+                                        ),
                                       ),
-                                    ),
-                                  ],
+                                      Expanded(
+                                        child: InkWell(
+                                          splashColor: Colors.transparent,
+                                          focusColor: Colors.transparent,
+                                          hoverColor: Colors.transparent,
+                                          highlightColor: Colors.transparent,
+                                          onTap: () async {
+                                            context.pushNamed(
+                                              'DoaPage',
+                                              extra: <String, dynamic>{
+                                                kTransitionInfoKey:
+                                                    TransitionInfo(
+                                                  hasTransition: true,
+                                                  transitionType:
+                                                      PageTransitionType
+                                                          .bottomToTop,
+                                                ),
+                                              },
+                                            );
+                                          },
+                                          child: Column(
+                                            mainAxisSize: MainAxisSize.max,
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.spaceAround,
+                                            children: [
+                                              Icon(
+                                                FFIcons.kdoa,
+                                                color: Colors.white,
+                                                size: 32.0,
+                                              ),
+                                              Text(
+                                                'Do\'a',
+                                                style:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodySmall
+                                                        .override(
+                                                          fontFamily:
+                                                              'Plus Jakarta Sans',
+                                                          color: Colors.white,
+                                                        ),
+                                              ),
+                                            ],
+                                          ),
+                                        ),
+                                      ),
+                                      Expanded(
+                                        child: InkWell(
+                                          splashColor: Colors.transparent,
+                                          focusColor: Colors.transparent,
+                                          hoverColor: Colors.transparent,
+                                          highlightColor: Colors.transparent,
+                                          onTap: () async {
+                                            context.pushNamed(
+                                              'Belajar',
+                                              extra: <String, dynamic>{
+                                                kTransitionInfoKey:
+                                                    TransitionInfo(
+                                                  hasTransition: true,
+                                                  transitionType:
+                                                      PageTransitionType
+                                                          .bottomToTop,
+                                                ),
+                                              },
+                                            );
+                                          },
+                                          child: Column(
+                                            mainAxisSize: MainAxisSize.max,
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.spaceAround,
+                                            children: [
+                                              Icon(
+                                                FFIcons.kbelajar,
+                                                color: Colors.white,
+                                                size: 32.0,
+                                              ),
+                                              Text(
+                                                'Belajar',
+                                                maxLines: 2,
+                                                style:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodySmall
+                                                        .override(
+                                                          fontFamily:
+                                                              'Plus Jakarta Sans',
+                                                          color: Colors.white,
+                                                        ),
+                                              ),
+                                            ],
+                                          ),
+                                        ),
+                                      ),
+                                      Expanded(
+                                        child: InkWell(
+                                          splashColor: Colors.transparent,
+                                          focusColor: Colors.transparent,
+                                          hoverColor: Colors.transparent,
+                                          highlightColor: Colors.transparent,
+                                          onTap: () async {
+                                            context.pushNamed(
+                                              'Quiz',
+                                              extra: <String, dynamic>{
+                                                kTransitionInfoKey:
+                                                    TransitionInfo(
+                                                  hasTransition: true,
+                                                  transitionType:
+                                                      PageTransitionType
+                                                          .bottomToTop,
+                                                ),
+                                              },
+                                            );
+                                          },
+                                          child: Column(
+                                            mainAxisSize: MainAxisSize.max,
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.spaceAround,
+                                            children: [
+                                              Icon(
+                                                FFIcons.kgame,
+                                                color: Colors.white,
+                                                size: 32.0,
+                                              ),
+                                              Align(
+                                                alignment: AlignmentDirectional(
+                                                    0.00, 0.00),
+                                                child: Text(
+                                                  'Quiz',
+                                                  maxLines: 2,
+                                                  style: FlutterFlowTheme.of(
+                                                          context)
+                                                      .bodySmall
+                                                      .override(
+                                                        fontFamily:
+                                                            'Plus Jakarta Sans',
+                                                        color: Colors.white,
+                                                      ),
+                                                ),
+                                              ),
+                                            ],
+                                          ),
+                                        ),
+                                      ),
+                                    ],
+                                  ),
                                 ),
                               ),
                             ),

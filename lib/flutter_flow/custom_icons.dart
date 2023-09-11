@@ -10,6 +10,7 @@ class FFIcons {
   static const String _icomoonFamily = 'Icomoon';
   static const String _seFamily = 'Se';
   static const String _mosqFamily = 'Mosq';
+  static const String _naviconFamily = 'Navicon';
 
   // back
   static const IconData kframe3 = IconData(0xe900, fontFamily: _backFamily);
@@ -38,4 +39,11 @@ class FFIcons {
 
   // mosq
   static const IconData kvector = IconData(0xe902, fontFamily: _mosqFamily);
+
+  // navicon
+  static const IconData kbelajar = IconData(0xe900, fontFamily: _naviconFamily);
+  static const IconData kgame = IconData(0xe901, fontFamily: _naviconFamily);
+  static const IconData kdoa = IconData(0xe902, fontFamily: _naviconFamily);
+  static const IconData kbookBold =
+      IconData(0xe903, fontFamily: _naviconFamily);
 }

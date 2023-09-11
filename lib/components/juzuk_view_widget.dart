@@ -164,7 +164,7 @@ class _JuzukViewWidgetState extends State<JuzukViewWidget> {
                                         ),
                                         child: Align(
                                           alignment:
-                                              AlignmentDirectional(0.0, 0.0),
+                                              AlignmentDirectional(0.00, 0.00),
                                           child: Column(
                                             mainAxisSize: MainAxisSize.max,
                                             mainAxisAlignment:
@@ -186,7 +186,7 @@ class _JuzukViewWidgetState extends State<JuzukViewWidget> {
                                                           Align(
                                                             alignment:
                                                                 AlignmentDirectional(
-                                                                    0.0, 0.0),
+                                                                    0.00, 0.00),
                                                             child: Text(
                                                               getJsonField(
                                                                 ayatItem,
@@ -228,7 +228,7 @@ class _JuzukViewWidgetState extends State<JuzukViewWidget> {
                                                     child: Align(
                                                       alignment:
                                                           AlignmentDirectional(
-                                                              1.0, 0.0),
+                                                              1.00, 0.00),
                                                       child: Text(
                                                         getJsonField(
                                                           ayatItem,
@@ -249,7 +249,7 @@ class _JuzukViewWidgetState extends State<JuzukViewWidget> {
                                               ),
                                               Align(
                                                 alignment: AlignmentDirectional(
-                                                    -1.0, 0.0),
+                                                    -1.00, 0.00),
                                                 child: Padding(
                                                   padding: EdgeInsetsDirectional
                                                       .fromSTEB(

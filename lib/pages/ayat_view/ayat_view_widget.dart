@@ -96,7 +96,7 @@ class _AyatViewWidgetState extends State<AyatViewWidget> {
                 child: Stack(
                   children: [
                     Align(
-                      alignment: AlignmentDirectional(0.0, -1.0),
+                      alignment: AlignmentDirectional(0.00, -1.00),
                       child: Padding(
                         padding:
                             EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 0.0),
@@ -438,7 +438,7 @@ class _AyatViewWidgetState extends State<AyatViewWidget> {
                                           .primaryText,
                                     ),
                                   ),
-                                  alignment: AlignmentDirectional(0.0, 0.0),
+                                  alignment: AlignmentDirectional(0.00, 0.00),
                                   child: Column(
                                     mainAxisSize: MainAxisSize.max,
                                     mainAxisAlignment: MainAxisAlignment.center,
@@ -451,7 +451,7 @@ class _AyatViewWidgetState extends State<AyatViewWidget> {
                                           Expanded(
                                             child: Align(
                                               alignment: AlignmentDirectional(
-                                                  0.0, 0.0),
+                                                  0.00, 0.00),
                                               child: Padding(
                                                 padding: EdgeInsetsDirectional
                                                     .fromSTEB(
@@ -571,8 +571,8 @@ class _AyatViewWidgetState extends State<AyatViewWidget> {
                                             ),
                                           ),
                                           Align(
-                                            alignment:
-                                                AlignmentDirectional(0.0, 0.0),
+                                            alignment: AlignmentDirectional(
+                                                0.00, 0.00),
                                             child: Padding(
                                               padding: EdgeInsetsDirectional
                                                   .fromSTEB(

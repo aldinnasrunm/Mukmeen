@@ -255,23 +255,28 @@ class _ProfileWidgetState extends State<ProfileWidget>
                 ),
                 child: Padding(
                   padding: EdgeInsetsDirectional.fromSTEB(2.0, 2.0, 2.0, 2.0),
-                  child: ClipRRect(
-                    borderRadius: BorderRadius.circular(60.0),
-                    child: Image.network(
-                      currentUserPhoto,
-                      width: 100.0,
-                      height: 100.0,
-                      fit: BoxFit.cover,
+                  child: AuthUserStreamWidget(
+                    builder: (context) => ClipRRect(
+                      borderRadius: BorderRadius.circular(60.0),
+                      child: Image.network(
+                        currentUserPhoto,
+                        width: 100.0,
+                        height: 100.0,
+                        fit: BoxFit.cover,
+                      ),
                     ),
                   ),
                 ),
               ).animateOnPageLoad(animationsMap['cardOnPageLoadAnimation']!),
               Padding(
                 padding: EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 0.0),
-                child: Text(
-                  currentUserDisplayName,
-                  style: FlutterFlowTheme.of(context).headlineSmall,
-                ).animateOnPageLoad(animationsMap['textOnPageLoadAnimation1']!),
+                child: AuthUserStreamWidget(
+                  builder: (context) => Text(
+                    currentUserDisplayName,
+                    style: FlutterFlowTheme.of(context).headlineSmall,
+                  ).animateOnPageLoad(
+                      animationsMap['textOnPageLoadAnimation1']!),
+                ),
               ),
               Padding(
                 padding: EdgeInsetsDirectional.fromSTEB(0.0, 4.0, 0.0, 0.0),

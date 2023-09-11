@@ -251,6 +251,58 @@ class IdKotaCall {
   }
 }
 
+class DoaCall {
+  static Future<ApiCallResponse> call() {
+    return ApiManager.instance.makeApiCall(
+      callName: 'doa',
+      apiUrl: 'https://open-api.my.id/api/doa',
+      callType: ApiCallType.GET,
+      headers: {},
+      params: {},
+      returnBody: true,
+      encodeBodyUtf8: false,
+      decodeUtf8: false,
+      cache: false,
+    );
+  }
+}
+
+class DoadetailCall {
+  static Future<ApiCallResponse> call({
+    int? id,
+  }) {
+    return ApiManager.instance.makeApiCall(
+      callName: 'doadetail',
+      apiUrl: 'https://open-api.my.id/api/doa/${id}',
+      callType: ApiCallType.GET,
+      headers: {},
+      params: {
+        'id': id,
+      },
+      returnBody: true,
+      encodeBodyUtf8: false,
+      decodeUtf8: false,
+      cache: false,
+    );
+  }
+}
+
+class VideoDataCall {
+  static Future<ApiCallResponse> call() {
+    return ApiManager.instance.makeApiCall(
+      callName: 'videoData',
+      apiUrl: 'https://aldinnasrunm.github.io/MukmeenAPI/video_data.json',
+      callType: ApiCallType.GET,
+      headers: {},
+      params: {},
+      returnBody: true,
+      encodeBodyUtf8: false,
+      decodeUtf8: false,
+      cache: false,
+    );
+  }
+}
+
 class ApiPagingParams {
   int nextPageNumber = 0;
   int numItems = 0;

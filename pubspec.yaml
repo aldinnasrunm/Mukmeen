@@ -32,6 +32,7 @@ dependencies:
   cloud_firestore_platform_interface: 5.15.0
   cloud_firestore_web: 3.6.0
   dropdown_button2: 2.0.0
+  easy_debounce: 2.0.1
   equatable: 2.0.5
   firebase_auth: 4.6.2
   firebase_auth_platform_interface: 6.15.2
@@ -87,6 +88,11 @@ dependencies:
   url_launcher_android: 6.0.27
   url_launcher_ios: 6.1.4
   url_launcher_platform_interface: 2.1.2
+  webview_flutter: 4.0.5
+  webview_flutter_android: 3.3.1
+  webview_flutter_platform_interface: 2.0.2
+  webview_flutter_wkwebview: 3.1.1
+  youtube_player_iframe: 4.0.4
 
 
   # The following adds the Cupertino Icons font to your application.
@@ -155,6 +161,9 @@ flutter:
     - family: Mosq
       fonts:
         - asset: assets/fonts/mosq.ttf
+    - family: Navicon
+      fonts:
+        - asset: assets/fonts/navicon.ttf
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

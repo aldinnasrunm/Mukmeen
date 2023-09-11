@@ -66,7 +66,7 @@ class _AyatListWidgetState extends State<AyatListWidget> {
                     color: Colors.white,
                   ),
                   child: Align(
-                    alignment: AlignmentDirectional(0.0, 0.0),
+                    alignment: AlignmentDirectional(0.00, 0.00),
                     child: Column(
                       mainAxisSize: MainAxisSize.max,
                       mainAxisAlignment: MainAxisAlignment.center,
@@ -83,7 +83,8 @@ class _AyatListWidgetState extends State<AyatListWidget> {
                                 child: Stack(
                                   children: [
                                     Align(
-                                      alignment: AlignmentDirectional(0.0, 0.0),
+                                      alignment:
+                                          AlignmentDirectional(0.00, 0.00),
                                       child: Text(
                                         getJsonField(
                                           ayatItem,
@@ -113,7 +114,7 @@ class _AyatListWidgetState extends State<AyatListWidget> {
                             ),
                             Flexible(
                               child: Align(
-                                alignment: AlignmentDirectional(1.0, 0.0),
+                                alignment: AlignmentDirectional(1.00, 0.00),
                                 child: Text(
                                   getJsonField(
                                     ayatItem,
@@ -131,7 +132,7 @@ class _AyatListWidgetState extends State<AyatListWidget> {
                           ],
                         ),
                         Align(
-                          alignment: AlignmentDirectional(-1.0, 0.0),
+                          alignment: AlignmentDirectional(-1.00, 0.00),
                           child: Padding(
                             padding: EdgeInsetsDirectional.fromSTEB(
                                 0.0, 24.0, 0.0, 22.0),

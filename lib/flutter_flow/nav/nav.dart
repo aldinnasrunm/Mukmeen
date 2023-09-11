@@ -159,8 +159,31 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           name: 'email_verif',
           path: '/emailVerif',
           builder: (context, params) => EmailVerifWidget(),
+        ),
+        FFRoute(
+          name: 'DoaPage',
+          path: '/doaPage',
+          builder: (context, params) => DoaPageWidget(),
+        ),
+        FFRoute(
+          name: 'DoaView',
+          path: '/doaView',
+          builder: (context, params) => DoaViewWidget(
+            idDoa: params.getParam('idDoa', ParamType.int),
+          ),
+        ),
+        FFRoute(
+          name: 'Belajar',
+          path: '/belajar',
+          builder: (context, params) => BelajarWidget(),
+        ),
+        FFRoute(
+          name: 'notifikasi',
+          path: '/notifikasi',
+          builder: (context, params) => NotifikasiWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
+      observers: [routeObserver],
     );
 
 extension NavParamExtensions on Map<String, String?> {

@@ -104,7 +104,7 @@ class _EmailVerifWidgetState extends State<EmailVerifWidget> {
                 ),
                 Expanded(
                   child: Align(
-                    alignment: AlignmentDirectional(0.0, 1.0),
+                    alignment: AlignmentDirectional(0.00, 1.00),
                     child: Padding(
                       padding:
                           EdgeInsetsDirectional.fromSTEB(29.0, 0.0, 29.0, 32.0),

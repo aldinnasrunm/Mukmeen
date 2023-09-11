@@ -2,9 +2,11 @@ import '/auth/firebase_auth/auth_util.dart';
 import '/backend/api_requests/api_calls.dart';
 import '/backend/backend.dart';
 import '/components/jadwal_sholat_widget.dart';
+import '/components/list_doa_widget.dart';
 import '/flutter_flow/flutter_flow_drop_down.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
 import '/flutter_flow/custom_functions.dart' as functions;
 import 'package:cloud_firestore/cloud_firestore.dart';
@@ -25,16 +27,20 @@ class DashboardModel extends FlutterFlowModel {
   ApiCallResponse? idDariKota;
   // Model for JadwalSholat component.
   late JadwalSholatModel jadwalSholatModel;
+  // Model for listDoa component.
+  late ListDoaModel listDoaModel;
 
   /// Initialization and disposal methods.
 
   void initState(BuildContext context) {
     jadwalSholatModel = createModel(context, () => JadwalSholatModel());
+    listDoaModel = createModel(context, () => ListDoaModel());
   }
 
   void dispose() {
     unfocusNode.dispose();
     jadwalSholatModel.dispose();
+    listDoaModel.dispose();
   }
 
   /// Action blocks are added here.

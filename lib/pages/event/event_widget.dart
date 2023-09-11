@@ -2,6 +2,7 @@ import '/flutter_flow/flutter_flow_button_tabbar.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart'
     as smooth_page_indicator;
 import 'package:flutter/material.dart';
@@ -32,7 +33,7 @@ class _EventWidgetState extends State<EventWidget>
       vsync: this,
       length: 3,
       initialIndex: 0,
-    );
+    )..addListener(() => setState(() {}));
   }
 
   @override
@@ -72,8 +73,8 @@ class _EventWidgetState extends State<EventWidget>
                         color: Color(0xFF2F461F),
                         size: 20.0,
                       ),
-                      onPressed: () {
-                        print('IconButton pressed ...');
+                      onPressed: () async {
+                        context.safePop();
                       },
                     ),
                   ),
@@ -133,7 +134,6 @@ class _EventWidgetState extends State<EventWidget>
                             ),
                           ],
                           controller: _model.tabBarController,
-                          onTap: (value) => setState(() {}),
                         ),
                       ),
                       Expanded(
@@ -245,7 +245,7 @@ class _EventWidgetState extends State<EventWidget>
                                                   Align(
                                                     alignment:
                                                         AlignmentDirectional(
-                                                            0.0, 1.0),
+                                                            0.00, 1.00),
                                                     child: Padding(
                                                       padding:
                                                           EdgeInsetsDirectional
@@ -688,7 +688,7 @@ class _EventWidgetState extends State<EventWidget>
                                                   Align(
                                                     alignment:
                                                         AlignmentDirectional(
-                                                            0.0, 1.0),
+                                                            0.00, 1.00),
                                                     child: Padding(
                                                       padding:
                                                           EdgeInsetsDirectional
@@ -805,7 +805,7 @@ class _EventWidgetState extends State<EventWidget>
                                             ),
                                             Align(
                                               alignment: AlignmentDirectional(
-                                                  -1.0, 1.0),
+                                                  -1.00, 1.00),
                                               child: Padding(
                                                 padding: EdgeInsetsDirectional
                                                     .fromSTEB(
@@ -829,7 +829,7 @@ class _EventWidgetState extends State<EventWidget>
                                               opacity: 0.5,
                                               child: Align(
                                                 alignment: AlignmentDirectional(
-                                                    -1.0, 1.0),
+                                                    -1.00, 1.00),
                                                 child: Padding(
                                                   padding: EdgeInsetsDirectional
                                                       .fromSTEB(15.0, 180.0,
@@ -903,7 +903,7 @@ class _EventWidgetState extends State<EventWidget>
                                             ),
                                             Align(
                                               alignment: AlignmentDirectional(
-                                                  -1.0, 1.0),
+                                                  -1.00, 1.00),
                                               child: Padding(
                                                 padding: EdgeInsetsDirectional
                                                     .fromSTEB(
@@ -927,7 +927,7 @@ class _EventWidgetState extends State<EventWidget>
                                               opacity: 0.5,
                                               child: Align(
                                                 alignment: AlignmentDirectional(
-                                                    -1.0, 1.0),
+                                                    -1.00, 1.00),
                                                 child: Padding(
                                                   padding: EdgeInsetsDirectional
                                                       .fromSTEB(15.0, 180.0,
@@ -1077,7 +1077,7 @@ class _EventWidgetState extends State<EventWidget>
                                                   Align(
                                                     alignment:
                                                         AlignmentDirectional(
-                                                            0.0, 1.0),
+                                                            0.00, 1.00),
                                                     child: Padding(
                                                       padding:
                                                           EdgeInsetsDirectional
@@ -1201,7 +1201,7 @@ class _EventWidgetState extends State<EventWidget>
                                               ),
                                               Align(
                                                 alignment: AlignmentDirectional(
-                                                    0.0, 5.93),
+                                                    0.00, 5.93),
                                                 child: ClipRRect(
                                                   borderRadius:
                                                       BorderRadius.circular(
@@ -1242,7 +1242,7 @@ class _EventWidgetState extends State<EventWidget>
                                                 Align(
                                                   alignment:
                                                       AlignmentDirectional(
-                                                          0.0, 5.93),
+                                                          0.00, 5.93),
                                                   child: ClipRRect(
                                                     borderRadius:
                                                         BorderRadius.circular(
@@ -1340,7 +1340,7 @@ class _EventWidgetState extends State<EventWidget>
                                                     Align(
                                                       alignment:
                                                           AlignmentDirectional(
-                                                              -1.0, -1.0),
+                                                              -1.00, -1.00),
                                                       child: Padding(
                                                         padding:
                                                             EdgeInsetsDirectional
@@ -1439,7 +1439,7 @@ class _EventWidgetState extends State<EventWidget>
                                                       Align(
                                                         alignment:
                                                             AlignmentDirectional(
-                                                                -1.0, -1.0),
+                                                                -1.00, -1.00),
                                                         child: Padding(
                                                           padding:
                                                               EdgeInsetsDirectional

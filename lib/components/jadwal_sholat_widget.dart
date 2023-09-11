@@ -61,7 +61,7 @@ class _JadwalSholatWidgetState extends State<JadwalSholatWidget> {
         children: [
           Expanded(
             child: Align(
-              alignment: AlignmentDirectional(-1.0, 0.0),
+              alignment: AlignmentDirectional(-1.00, 0.00),
               child: Padding(
                 padding: EdgeInsetsDirectional.fromSTEB(19.0, 14.0, 0.0, 14.0),
                 child: Column(
@@ -194,7 +194,7 @@ class _JadwalSholatWidgetState extends State<JadwalSholatWidget> {
             ),
           ),
           Align(
-            alignment: AlignmentDirectional(1.0, 0.0),
+            alignment: AlignmentDirectional(1.00, 0.00),
             child: Padding(
               padding: EdgeInsetsDirectional.fromSTEB(18.0, 0.0, 0.0, 0.0),
               child: Container(
@@ -215,7 +215,7 @@ class _JadwalSholatWidgetState extends State<JadwalSholatWidget> {
                         size: 44.0,
                       ),
                       Align(
-                        alignment: AlignmentDirectional(0.0, 0.0),
+                        alignment: AlignmentDirectional(0.00, 0.00),
                         child: Padding(
                           padding: EdgeInsetsDirectional.fromSTEB(
                               12.0, 0.0, 12.0, 0.0),
