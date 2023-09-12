@@ -541,7 +541,7 @@ class _DashboardWidgetState extends State<DashboardWidget> {
                                                 1.0,
                                         height: 100.0,
                                         decoration: BoxDecoration(
-                                          color: Colors.white,
+                                          color: Color(0x00FFFFFF),
                                         ),
                                         child: wrapWithModel(
                                           model: _model.listDoaModel,
@@ -776,7 +776,7 @@ class _DashboardWidgetState extends State<DashboardWidget> {
                                           highlightColor: Colors.transparent,
                                           onTap: () async {
                                             context.pushNamed(
-                                              'Quiz',
+                                              'Game',
                                               extra: <String, dynamic>{
                                                 kTransitionInfoKey:
                                                     TransitionInfo(
