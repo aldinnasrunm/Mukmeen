@@ -55,7 +55,7 @@ class _VideoComponentWidgetState extends State<VideoComponentWidget> {
           padding: EdgeInsets.zero,
           scrollDirection: Axis.vertical,
           itemCount: vidDt.length,
-          separatorBuilder: (_, __) => SizedBox(height: 12.0),
+          separatorBuilder: (_, __) => SizedBox(height: 24.0),
           itemBuilder: (context, vidDtIndex) {
             final vidDtItem = vidDt[vidDtIndex];
             return FlutterFlowYoutubePlayer(
@@ -66,8 +66,9 @@ class _VideoComponentWidgetState extends State<VideoComponentWidget> {
               autoPlay: false,
               looping: false,
               mute: false,
-              showControls: true,
-              showFullScreen: true,
+              showControls: false,
+              showFullScreen: false,
+              pauseOnNavigate: true,
             );
           },
         );

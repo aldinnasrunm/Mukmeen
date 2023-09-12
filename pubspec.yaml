@@ -56,7 +56,7 @@ dependencies:
     git:
       url: https://github.com/FlutterFlow/infinite_scroll_pagination.git
       ref: develop
-  intl: 0.18.0
+  intl: ^0.18.1
   json_path: 0.6.2
   just_audio: 0.9.28
   just_audio_platform_interface: 4.2.0
@@ -95,22 +95,35 @@ dependencies:
   youtube_player_iframe: 4.0.4
 
 
+
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.0
 
+#dev_dependencies:
+#  flutter_launcher_icons: 0.12.0
+
+#flutter_icons:
+#  android: true
+#  ios: true
+#  remove_alpha_ios: true
+#  image_path: 'assets/images/app_launcher_icon.png'
+
 dev_dependencies:
-  flutter_launcher_icons: 0.12.0
+  flutter_launcher_icons: ^0.13.1
+
+flutter_launcher_icons:
+  android: "launcher_icon"
+  ios: true
+  image_path: 'assets/images/app_launcher_icon.png'
+  min_sdk_android: 21 # android min sdk min:16, default 21
+
 
   flutter_test:
     sdk: flutter
 
 
-flutter_icons:
-  android: true
-  ios: true
-  remove_alpha_ios: true
-  image_path: 'assets/images/app_launcher_icon.png'
+#
 
 
 # For information on the generic Dart part of this file, see the

@@ -63,7 +63,7 @@ class _BelajarWidgetState extends State<BelajarWidget> {
                       image: DecorationImage(
                         fit: BoxFit.cover,
                         image: Image.asset(
-                          'assets/images/Dasboard.png',
+                          'assets/images/frameBelajar.png',
                         ).image,
                       ),
                       borderRadius: BorderRadius.only(
