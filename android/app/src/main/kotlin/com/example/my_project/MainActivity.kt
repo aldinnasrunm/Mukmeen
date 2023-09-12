@@ -1,4 +1,4 @@
-package com.mycompany.mukmeen
+package com.chindoutama.mukmeen
 
 import io.flutter.embedding.android.FlutterActivity
 

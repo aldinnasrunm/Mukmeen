@@ -7,12 +7,124 @@
   "client": [
     {
       "client_info": {
+        "mobilesdk_app_id": "1:885455555650:android:7a058c94d06cdf2cfa31db",
+        "android_client_info": {
+          "package_name": "com.chindo.mukmeen"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "885455555650-170s7q0s6atn81tj2l1rqqec667s3ap0.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.chindo.mukmeen",
+            "certificate_hash": "829dad48ef3622140f043c0c618103d3c9e2b58f"
+          }
+        },
+        {
+          "client_id": "885455555650-hb7227cca08g2ni4goq80pjmv86ouor3.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.chindo.mukmeen",
+            "certificate_hash": "9bbb3186b2189ef16d8f272bdab59362c395cbb4"
+          }
+        },
+        {
+          "client_id": "885455555650-0lsscb40s61anjqbvm6c3h62f8gtcps0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDJK96CFQ06p3Mgs-8p_U5xg8-s_-4GPx4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "885455555650-0lsscb40s61anjqbvm6c3h62f8gtcps0.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "885455555650-5lnapbao9ojacd3gd1c0165e3l8fg1i2.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.chindo.mukmeen"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:885455555650:android:e53f5ddc879cc903fa31db",
+        "android_client_info": {
+          "package_name": "com.chindoutama.mukmeen"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "885455555650-ivd91fe847qmevnmni4edudud4qbalco.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.chindoutama.mukmeen",
+            "certificate_hash": "9bbb3186b2189ef16d8f272bdab59362c395cbb4"
+          }
+        },
+        {
+          "client_id": "885455555650-0lsscb40s61anjqbvm6c3h62f8gtcps0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDJK96CFQ06p3Mgs-8p_U5xg8-s_-4GPx4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "885455555650-0lsscb40s61anjqbvm6c3h62f8gtcps0.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "885455555650-5lnapbao9ojacd3gd1c0165e3l8fg1i2.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.chindo.mukmeen"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
         "mobilesdk_app_id": "1:885455555650:android:ebd71b9a9e2fd426fa31db",
         "android_client_info": {
           "package_name": "com.mycompany.mukmeen"
         }
       },
       "oauth_client": [
+        {
+          "client_id": "885455555650-6bt457hnm5cotbjrgbs4b1hq6bidqkd5.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.mycompany.mukmeen",
+            "certificate_hash": "87cb78c4518021e4d61c1ae9de03031a94f89665"
+          }
+        },
+        {
+          "client_id": "885455555650-7dmh2sm82nl4qq50vgp4haaa2pbr2kfj.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.mycompany.mukmeen",
+            "certificate_hash": "c48b8dbd572a5da16e65edf471e8181b6c935c7a"
+          }
+        },
         {
           "client_id": "885455555650-ba7ekmvdqcebtlacvhbgg1ffbdkt2bv3.apps.googleusercontent.com",
           "client_type": 1,
@@ -47,10 +159,10 @@
               "client_type": 3
             },
             {
-              "client_id": "885455555650-9fg2ms1l8vc5r4qcco60gh8kp8grrtpv.apps.googleusercontent.com",
+              "client_id": "885455555650-5lnapbao9ojacd3gd1c0165e3l8fg1i2.apps.googleusercontent.com",
               "client_type": 2,
               "ios_info": {
-                "bundle_id": "com.mycompany.mukmeen"
+                "bundle_id": "com.chindo.mukmeen"
               }
             }
           ]
@@ -74,6 +186,14 @@
           }
         },
         {
+          "client_id": "885455555650-huvgr3opjt683v0ijpmlcchr1jtqbg9d.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.mycompany.passm",
+            "certificate_hash": "c48b8dbd572a5da16e65edf471e8181b6c935c7a"
+          }
+        },
+        {
           "client_id": "885455555650-0lsscb40s61anjqbvm6c3h62f8gtcps0.apps.googleusercontent.com",
           "client_type": 3
         }
@@ -91,10 +211,10 @@
               "client_type": 3
             },
             {
-              "client_id": "885455555650-9fg2ms1l8vc5r4qcco60gh8kp8grrtpv.apps.googleusercontent.com",
+              "client_id": "885455555650-5lnapbao9ojacd3gd1c0165e3l8fg1i2.apps.googleusercontent.com",
               "client_type": 2,
               "ios_info": {
-                "bundle_id": "com.mycompany.mukmeen"
+                "bundle_id": "com.chindo.mukmeen"
               }
             }
           ]
