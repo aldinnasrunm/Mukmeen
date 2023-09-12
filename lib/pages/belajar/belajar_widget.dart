@@ -141,7 +141,7 @@ class _BelajarWidgetState extends State<BelajarWidget> {
                                           controller: _model.textController,
                                           obscureText: false,
                                           decoration: InputDecoration(
-                                            hintText: 'Search book',
+                                            hintText: 'Cari Video',
                                             hintStyle:
                                                 FlutterFlowTheme.of(context)
                                                     .bodySmall
